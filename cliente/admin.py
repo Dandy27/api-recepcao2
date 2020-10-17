@@ -1,5 +1,6 @@
 
 from django.contrib import admin
+from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter
 from .models import Pessoa
 
 admin.site.site_header = "Cadastro de Clientes"
@@ -7,7 +8,7 @@ admin.site.site_header = "Cadastro de Clientes"
 class PessoaAdmin(admin.ModelAdmin):
     list_display=('nome', 'cpf', 'get_data_de_nascimento', 'phone', 'sexo', 'get_data')
     search_fields=('nome', 'cpf', 'data_de_nascimento', 'phone', 'sexo', 'data')
-    list_filter = ('sexo', 'data', ) 
+    list_filter = ('sexo', ('data', DateRangeFilter)) 
     date_hierarchy = 'data'
 
 
