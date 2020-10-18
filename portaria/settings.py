@@ -24,7 +24,7 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://dandy27-cadastro.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['https://dandy27-cadastro.herokuapp.com/', '*' ]
 
 
 # Application definition
